@@ -1,0 +1,31 @@
+{% extends "basic.html" %}
+
+{% block title %}Update{% endblock %}
+{% block note %}
+
+{% csrf_token %}
+{% for data in data %}
+<form action="/update/{{ data.idf }}/" method="POST">
+<div class="notes">
+            <textarea onKeyup=main() name="note" id="note" cols="30" rows="10">{{ data.note }}</textarea>
+        </div>
+        
+        <div class="upbtn">
+            <button type="submit">Save</button>
+        </div>
+    </form>
+    {% endfor %}
+    
+{% endblock %}
+
+{% block script %}
+
+<script>
+    const btn = document.querySelector("button");
+
+    const main = () => {
+        btn.style.display = "block";
+    };
+</script>
+
+{% endblock %}

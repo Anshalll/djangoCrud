@@ -1,0 +1,38 @@
+{% extends "basic.html" %}
+{% block title %}Cytonotes{% endblock  %}
+  {% block note %}
+     <div class="notes">
+        <div class="notedata">
+          {% for i in data %}
+                <div class="note">
+                
+
+                    <p>{{ i.1 }}</p>
+                    <p class="time">{{ i.2 }}  {{ i.3 }}</p>
+                <div class="crop">
+
+                  <a href="delete/{{ i.0 }}/">Delete</a>
+                  <a href="update/{{ i.0 }}/">Update</a>
+                </div>
+                </div>
+          {% endfor %}
+        </div>
+
+      </div>
+
+
+      <form action="" method="post" class="inputfields">
+  {% csrf_token %}
+      <div class="minp">
+
+        <input type="text" name="note" placeholder="Your Subject">
+      </div>
+     <div class="btn"> 
+
+       <button type="submit">Post</button>
+      </div>
+    </form>
+  {% endblock  %}
+
+
+  

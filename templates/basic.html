@@ -1,0 +1,39 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock  %}</title>
+    <link rel="shortcut icon" href="{% static "C.png" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "index.css" %}">
+    <meta name="title" content="Cytonotes">
+    <meta name="description" content="Cytonotes is a Personal Notes sites Developed by Cytomo">
+  </head>
+<body>
+  <div class="main">
+      <div class="logoheader">
+        <img src="{% static "C.png" %}" alt="Loading">
+        <h3>Cytonotes</h3>
+      </div>
+
+
+      {% block note %}
+      
+      
+      {% endblock  %}
+
+
+
+      
+   
+  </div>
+
+
+{% block script %}
+
+
+{% endblock  %}
+</body>
+</html>
